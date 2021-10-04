@@ -52,30 +52,21 @@ function init() {
     Cubo = [];   // Definir un array unidimensional
     dim = 4; //Al ser cubos, todas sus medidas en los ejes son la misma, por lo que se utiliza la variable dim para almacenar dicho valor.
     delta = 8; //Cantidad de unidades que se trasladarán los cubos en sus respectivos ejes.
+    angulo= (Math.PI/2)
 
-    for(var i=0; i<3; i++){
-   
-      Cubo.push(cubo(dim, dim, dim, 0xFFDD00, 'Standard', false));
+    Cubo.push(cubo(dim, dim, dim, 0xFFDD00, 'Physical', false));
 
-      if(i==0){
+    Cubo.push(cubo(dim, dim, dim, 0xFF5733, 'Standard', false));
 
-       Cubo[i].translateX(delta); //Para el método Translate, es necesario aclarar el eje en el que se moverá el objeto y la cantidad de unidades (A modo de parámetro).
+    Cubo.push(cubo(dim, dim, dim, 0xC39BD3, 'Phong', false));
 
-      }
-
-      if(i==1){
-
-      Cubo[i].translateY(delta);
-
-      }
-
-      if(i==2){
-
-      Cubo[i].translateZ(delta);
-
-      }
-
-    }
+    Cubo[0].rotateZ(angulo);
+    Cubo[1].rotateX(angulo);
+    Cubo[2].rotateY(angulo);
+ 
+    Cubo[0].translateX(delta);
+    Cubo[1].translateY(delta);
+    Cubo[2].translateZ(delta);
 
     // position and point the camera to the center of the scene
     camera.position.set(-30, 40, 30);
