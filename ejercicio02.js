@@ -60,11 +60,11 @@ function init() {
 
     Cubo.push(cubo(dim, dim, dim, 0xC39BD3, 'Phong', false));
 
-    Cubo[0].rotateZ(angulo);
+    Cubo[0].rotateZ(angulo); //En la rotración, se debe especificar el eje con respecto al cual girará la figura, al igual que el valor en radianes a modo de parámetro.
     Cubo[1].rotateX(angulo);
     Cubo[2].rotateY(angulo);
  
-    Cubo[0].translateX(delta);
+    Cubo[0].translateX(delta);//En la traslación se debe especificar en qué eje se moverá la figura y la cantidad de unidades a modo de parámetro.
     Cubo[1].translateY(delta);
     Cubo[2].translateZ(delta);
 
