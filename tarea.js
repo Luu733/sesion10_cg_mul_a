@@ -50,21 +50,21 @@ function init() {
 
 
     Cubo = [];   // Definir un array unidimensional
-    num= Math.round(Math.random() * (2 - 0) + 0);
-    num2 = Math.round(Math.random() * (2 - 0) + 0);
-    num3 = Math.round(Math.random() * (2 - 0) + 0);
-    eje=Math.round(Math.random()*(2 - 0) + 0);
+    num= Math.round(Math.random() * (2 - 0) + 0); //Variable que da un número entero aleatorio de 0 al 2 para el cubo 1.
+    num2 = Math.round(Math.random() * (2 - 0) + 0);//Variable que da un número entero aleatorio de 0 al 2 para el cubo 2.
+    num3 = Math.round(Math.random() * (2 - 0) + 0); //Variable que da un número entero aleatorio de 0 al 2 para el cubo 3.
+    eje=Math.round(Math.random()*(2 - 0) + 0); //Variable que da un número entero aleatorio de 0 al 2 para decidir el eje a rotar.
     dim = 4; 
     delta = 8;
 
-    var ang = prompt("Ingrese valor del angulo ","Valor");
+    var ang = prompt("Ingrese valor del angulo ","Valor"); //La variable ang guarda el valor ingresado por el usuario.
     if(ang != null){
-	alert("Has escrito " + ang);
+	alert("Has escrito " + ang); //Si el usuario digita un valor, es indicado a modo de otra ventana emergente.
     } else {
-	alert("No has escrito nada");
+	alert("No has escrito nada"); //Si el usuario NO digita valor, aparece este mensaje.
     }
 
-  ang_rad= (ang)*((2*Math.PI)/(360));
+  ang_rad= (ang)*((2*Math.PI)/(360)); //Conversión de grados a radianes.
 
     Cubo.push(cubo(dim, dim, dim, 0xFFDD00, 'Physical', false));
 
@@ -72,7 +72,7 @@ function init() {
 
     Cubo.push(cubo(dim, dim, dim, 0xC39BD3, 'Phong', false));
 
-    if( eje = 0){
+    if( eje = 0){ 
     Cubo[num].rotateX(ang_rad);
     Cubo[num].translateX(delta);
     }
